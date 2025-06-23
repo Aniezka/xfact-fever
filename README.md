@@ -106,7 +106,7 @@ TBD
 
 - **X-Fact Paper**: https://aclanthology.org/2021.acl-short.86.pdf
 
-## 📞 Contact
+## Contact
 
 For questions about the outputs or methodology:
 **Hanna Shcharbakova** - Saarland University, aniezka.sherbakova@gmail.com
