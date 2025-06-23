@@ -2,7 +2,7 @@
 
 ## 📄 Overview
 
-This repository contains the **model outputs and evaluation results** from our comprehensive study comparing different language model architectures on multilingual fact verification. We evaluated both small language models (XLM-R base, mT5 base) and large language models (Qwen 2.5 7B, llama 3.1 8B, Mistral Nemo 12B) on the challenging X-Fact dataset, which spans 25 languages with seven distinct veracity categories.
+This repository contains the **LLMs outputs and evaluation results** from our comprehensive study comparing different language model architectures on multilingual fact verification. We evaluated both small language models (SLMs) and large language models (LLMs) on the challenging X-Fact dataset, which spans 25 languages with seven distinct veracity categories.
 
 > **Key Finding**: XLM-R (270M parameters) substantially outperforms all tested LLMs (7-12B parameters), achieving **57.7% macro-F1** compared to the best LLM performance of **16.9%** - a **15.8% improvement** over previous state-of-the-art!
 
@@ -23,16 +23,29 @@ This repository contains the **model outputs and evaluation results** from our c
 - 📊 **Scale paradox**: Smaller specialized models outperform much larger general-purpose models
 - 🌐 **Cross-lingual gaps**: All models show performance degradation on out-of-domain and zero-shot language transfer
 
-## 📊 What's Included
+## 📊 Downloading Model Outputs
 
-This repository contains **model outputs for the three large language models** evaluated in our study. While we evaluated both small language models (XLM-R, mT5) and large language models, we provide outputs only for the LLMs:
+The complete model outputs are available as a GitHub release:
+
+### 📥 [Download Model Outputs (Latest Release)](../../releases/latest)
+
+**Quick Download:**
+```bash
+# Download and extract outputs
+wget https://github.com/Aniezka/xfact-fever/releases/latest/download/multilingual-fact-verification-outputs.tar.gz
+tar -xzf multilingual-fact-verification-outputs.tar.gz
+```
+
+### What's Included
+
+The download contains **model outputs for the three large language models** evaluated in our study. While we evaluated both small language models (XLM-R, mT5) and large language models, we provide outputs only for the LLMs:
 
 ```
 outputs/
 ├── benchmarking/
-│   └── finetune/
-│       ├── no_evidence/
-│       └── with_evidence/
+│   └── finetune/                                        # LoRA Fine-tuning Results
+│       ├── no_evidence/                                 # Claim-only fine-tuning
+│       └── with_evidence/                               # Claim+evidence fine-tuning
 │           ├── llama/
 │           │   ├── out_finetune_llama_dev.csv
 │           │   ├── out_finetune_llama_ood.csv
@@ -40,19 +53,16 @@ outputs/
 │           │   └── out_finetune_llama_zeroshot.csv
 │           ├── mistral/
 │           └── qwen/
-└── inference/
-    ├── no_evidence/
+└── inference/                                           # Few-shot Prompting Results
+    ├── no_evidence/                                     # Claim-only prompting
     │   └── llama/
     │       ├── inference_claim_out_llama_dev.csv
     │       ├── inference_claim_out_llama_ood.csv
     │       ├── inference_claim_out_llama_test.csv
     │       └── inference_claim_out_llama_zeroshot.csv
-    ├── llama_new_prompt_1/
-    ├── llama_new_prompt_3/
-    ├── llama_old_prompt/
     ├── mistral/
     ├── qwen/
-    └── with_evidence/
+    └── with_evidence/                                   # Claim+evidence prompting
 ```
 
 ### Output Format
@@ -89,12 +99,12 @@ Each CSV file contains the following columns:
 - **Claims**: 31,189 total claims
 - **Categories**: 7 fine-grained veracity labels
   - `true`, `mostly_true`, `partly_true`, `mostly_false`, `false`, `complicated`, `other`
-- **Evaluation splits**: In-domain, out-of-domain, zero-shot (cross-lingual)
+- **Evaluation splits**: In-domain, out-of-domain, zero-shot cross-lingual
 
 ### LLM Limitations Discovered
 1. **Evidence integration failure**: Sequential processing in decoder-only models hinders balanced evidence evaluation
 2. **Class imbalance sensitivity**: LLMs show stronger bias toward frequent categories
-3. **Cross-lingual challenges**: Steeper performance drops on unseen languages
+3. **Cross-lingual brittleness**: Steeper performance drops on unseen languages
 
 ## 📋 Citation
 
@@ -108,5 +118,5 @@ TBD
 
 ## Contact
 
-For questions about the outputs or methodology:
-**Hanna Shcharbakova** - Saarland University, aniezka.sherbakova@gmail.com
+For any questions or collaboration:
+- **Hanna Shcharbakova** - Saarland University, aniezka.sherbakova@gmail.com
