@@ -1,5 +1,7 @@
 # When Scale Meets Diversity: Evaluating Language Models on Fine-Grained Multilingual Claim Verification
 
+The link to the paper: https://arxiv.org/abs/2507.20700 
+
 ## 📄 Overview
 
 This repository contains the **LLMs outputs and evaluation results** from our comprehensive study comparing different language model architectures on multilingual fact verification. We evaluated both small language models (SLMs) and large language models (LLMs) on the challenging X-Fact dataset, which spans 25 languages with seven distinct veracity categories.
