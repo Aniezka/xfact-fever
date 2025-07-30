@@ -248,7 +248,8 @@ If you use these outputs in your research, please cite our paper:
     publisher = "Association for Computational Linguistics",
     url = "https://aclanthology.org/2025.fever-1.5/",
     pages = "69--84",
-    ISBN = "978-1-959429-53-1"
+    ISBN = "978-1-959429-53-1",
+    abstract = "The rapid spread of multilingual misinformation requires robust automated fact verification systems capable of handling fine-grained veracity assessments across diverse languages. While large language models have shown remarkable capabilities across many NLP tasks, their effectiveness for multilingual claim verification with nuanced classification schemes remains understudied. We conduct a comprehensive evaluation of five state-of-the-art language models on the X-Fact dataset, which spans 25 languages with seven distinct veracity categories. Our experiments compare small language models (encoder-based XLM-R and mT5) with recent decoder-only LLMs (Llama 3.1, Qwen 2.5, Mistral Nemo) using both prompting and fine-tuning approaches. Surprisingly, we find that XLM-R (270M parameters) substantially outperforms all tested LLMs (7-12B parameters), achieving 57.7{\%} macro-F1 compared to the best LLM performance of 16.9{\%}. This represents a 15.8{\%} improvement over the previous state-of-the-art (41.9{\%}), establishing new performance benchmarks for multilingual fact verification. Our analysis reveals problematic patterns in LLM behavior, including systematic difficulties in leveraging evidence and pronounced biases toward frequent categories in imbalanced data settings. These findings suggest that for fine-grained multilingual fact verification, smaller specialized models may be more effective than general-purpose large models, with important implications for practical deployment of fact-checking systems."
 }
 ```
 
