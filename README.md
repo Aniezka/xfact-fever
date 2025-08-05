@@ -148,14 +148,3 @@ If you use these outputs in your research, please cite our paper:
 
 For any questions or collaboration:
 - **Hanna Shcharbakova** - Saarland University, aniezka.sherbakova@gmail.com
-
-
-
-## 🔗 Related Resources
-
-- **X-Fact Paper**: https://aclanthology.org/2021.acl-short.86.pdf
-
-## Contact
-
-For any questions or collaboration:
-- **Hanna Shcharbakova** - Saarland University, aniezka.sherbakova@gmail.com
